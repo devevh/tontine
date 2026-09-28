@@ -75,11 +75,7 @@ style="padding:128px 16px">
   style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;align-items:center"> -->
 
     <h1>Tontine</h1>
-	<form id="parametres" class="w3-container">
-			<p>
-				<label for="MtTotal">Montant total (XAF)</label>
-				<input id="MtTotal" class="w3-input" type="number" size="7" min="1000" max="99999999">
-			</p>
+	<form id="parametres" class="w3-container" action="" >
 			<p>
 				<label for="periode">Période</label>
 				<select id="periode" class="w3-select">
@@ -90,13 +86,32 @@ style="padding:128px 16px">
 				</select>
 			</p>
 			<p>
+				<label for="debut">Date début</label>
+				<input id="debut" class="w3-input" type="date">
+			</p>
+			<p>
 				<label for="NbPers">Nb de participants (2-99)</label>
-				<input id="NbPers" class="w3-input" type="number" size="3" min="2" max="99">
+				<input id="NbPers" class="w3-input" type="number" size="3" min="2" max="99" onchange="Calculer('T');" placeholder="2-99">
+			</p>
+			<p>
+				<label for="MtTotal">Montant total (XAF)</label>
+				<input id="MtTotal" class="w3-input" type="number" size="7" min="1000" max="99999999" onchange="Calculer('U');" placeholder="max 99999999">
 			</p>
 			<p>
 				<label for="MtUnitaire">Montant unitaire (XAF)</label>
-				<input id="MtUnitaire" class="w3-input" type="number" size="7" min="1000" max="99999999">
+				<input id="MtUnitaire" class="w3-input" type="number" size="7" min="1000" max="99999999" onchange="Calculer('T');" placeholder="max 99999999">
 			</p>
+			<p>
+				<button id="ajouterPersonne" class="w3-button w3-circle w3-green w3-tiny" onclick="document.getElementById('modalajouterPersonne').style.display='block'">+</button>
+			</p>		
+<!--			<p>
+ 			<label>Nom</label>
+			<input id="" class="w3-input" type="text">
+			</p>
+			<p>
+			<label>Email</label>
+			<input id="" class="w3-input" type="email">
+			</p> -->
 	</form>
 	
 </section>
@@ -123,34 +138,62 @@ style="padding:128px 16px">
 </footer>
  -->
  <!-- The Modal -->
-<div id="modalpers1" class="w3-modal">
+<div id="modalajouterPersonne" class="w3-modal">
   <div class="w3-modal-content">
     <div class="w3-container">
-      <span onclick="document.getElementById('modalpers1').style.display='none'"
+	<script>console.log('ouverture modale modalajouterPersonne');</script>
+      <span onclick="document.getElementById('modalajouterPersonne').style.display='none'"
       class="w3-button w3-display-topright">&times;</span>
-      <p>Personne 1</p>
-      <p>Some text in the Modal..</p>
+      <p>Ajouter une personne</p>
+	  <form id="" action="">
+		<p>
+			<label for="dateSouhaitee">Date souhaitée</label>
+			<input id="dateSouhaitee" class="w3-input" type="date">
+		</p>
+		<p>
+			<label for="nom">Nom</label>
+			<input id="nom" class="w3-input" type="text">
+		</p>
+		<p>
+			<label for="telephone">Tél</label>
+			<input id="telephone" class="w3-input" type="text">
+		</p>
+	</form>
+	<script>console.log('fin ouverture modale modalajouterPersonne');</script>
     </div>
   </div>
 </div>
 
-
-<div id="modalpers2" class="w3-modal">
-  <div class="w3-modal-content">
-    <div class="w3-container">
-      <span onclick="document.getElementById('modalpers2').style.display='none'"
-      class="w3-button w3-display-topright">&times;</span>
-      <p>Personne 2</p>
-      <p>Some text in the Modal..</p>
-    </div>
-  </div>
-</div>
 <script>
 const mobileMenu = document.getElementById("navDemo");
 
 function myFunction() {
   mobileMenu.classList.toggle("w3-show");
 }
+
+function Calculer(i) {
+	let MtUnitaire=document.getElementById('MtUnitaire');
+	let MtTotal=document.getElementById('MtTotal');
+	let NbPers=document.getElementById('NbPers');
+
+	if (NbPers.value <=0 || Number.isNaN(NbPers.value)) {
+		alert ("nombre de personnes obligatoire !");
+		NbPers.focus();
+	}
+	else {
+		switch(i) {
+		  case 'U':
+			MtUnitaire.value = Math.round(MtTotal.value / NbPers.value)
+			break;
+		  case 'T':
+			MtTotal.value = MtUnitaire.value * NbPers.value
+			break;
+		  default:
+			break;
+		}
+	}
+}
+
 </script>
 
 </body>

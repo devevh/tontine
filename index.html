@@ -80,7 +80,7 @@ style="padding:128px 16px">
 	<ul class="w3-ul">
 		<li class="w3-bar">
 			<img class="w3-bar-item" src="rond_vert_plein.png" style="width:60px">
-			<span class="w3-bar-item"> M - Nom <button id="pers1" class="w3-button w3-circle w3-green w3-small" onclick="document.getElementById('modal'+this.id).style.display='block'">+</button></span>
+			<span class="w3-bar-item"> Date1 - Nom1 <button id="Date1" class="w3-button w3-circle w3-green w3-tiny" onclick="document.getElementById('modal'+this.id).style.display='block'">+</button></span>
 		</li>
 		<li class="w3-bar" id="nobottom">
 			<img class="w3-bar-item" src="trait_vert_plein.png" style="width:60px">
@@ -88,7 +88,7 @@ style="padding:128px 16px">
 		</li>
 		<li class="w3-bar">
 			<img class="w3-bar-item" src="rond_vert_plein.png" style="width:60px">
-			<span class="w3-bar-item"> M - Nom <button id="pers2" class="w3-button w3-circle w3-green w3-small" onclick="document.getElementById('modal'+this.id).style.display='block'">+</button></span>
+			<span class="w3-bar-item"> Date2 - Nom2 <button id="Date2" class="w3-button w3-circle w3-green w3-tiny" onclick="document.getElementById('modal'+this.id).style.display='block'">+</button></span>
 		</li>
 		<li class="w3-bar" id="nobottom">
 			<img class="w3-bar-item" src="tiret_vertical_vert_epais.png" style="width:60px">
@@ -96,7 +96,7 @@ style="padding:128px 16px">
 		</li>
 		<li class="w3-bar">
 			<img class="w3-bar-item" src="cercle_vert_epais.png" style="width:60px">
-			<span class="w3-bar-item"> M - Nom (+)
+			<span class="w3-bar-item"> Date3 - Nom3
 			</span>
 		</li>
 		<li class="w3-bar" id="nobottom">
@@ -105,7 +105,7 @@ style="padding:128px 16px">
 		</li>
 		<li class="w3-bar">
 			<img class="w3-bar-item" src="cercle_vert_epais.png" style="width:60px">
-			<span class="w3-bar-item"> M - Nom (+)
+			<span class="w3-bar-item">  Date4 - Nom4
 			</span>
 		</li>
 		<li class="w3-bar" id="nobottom">
@@ -114,7 +114,7 @@ style="padding:128px 16px">
 		</li>
 		<li class="w3-bar">
 			<img class="w3-bar-item" src="cercle_vert_epais.png" style="width:60px">
-			<span class="w3-bar-item"> M - Nom (+)
+			<span class="w3-bar-item"> Date5 - Nom5
 			</span>
 		</li>
 		<li class="w3-bar" id="nobottom">
@@ -123,7 +123,7 @@ style="padding:128px 16px">
 		</li>
 		<li class="w3-bar">
 			<img class="w3-bar-item" src="cercle_vert_epais.png" style="width:60px">
-			<span class="w3-bar-item"> M - Nom (+)
+			<span class="w3-bar-item"> Date6 - Nom6
 			</span>
 		</li>
 	</ul>
@@ -176,25 +176,43 @@ style="padding:128px 16px">
 </footer>
  -->
  <!-- The Modal -->
-<div id="modalpers1" class="w3-modal">
+<div id="modalDate1" class="w3-modal">
   <div class="w3-modal-content">
     <div class="w3-container">
-      <span onclick="document.getElementById('modalpers1').style.display='none'"
+      <span onclick="document.getElementById('modalDate1').style.display='none'"
       class="w3-button w3-display-topright">&times;</span>
-      <p>Personne 1</p>
-      <p>Some text in the Modal..</p>
+      <p>Date 1</p>
+      <p>Somme versée : 6666666 XAF</p>
+	  <ul class="w3-ul">
+		<li> Personne1 <span class="w3-text-green">OK</span></li>
+		<li> Personne2 <span class="w3-text-green">OK</span></li>
+		<li> Personne3 <span class="w3-text-green">OK</span></li>
+		<li> Personne4 <span class="w3-text-red">KO</span></li>
+		<li> Personne5 <span class="w3-text-green">OK</span></li>
+		<li> Personne6 <span class="w3-text-green">OK</span></li>
+		<li> Personne7 <span class="w3-text-green">OK</span></li>
+	  </ul>
     </div>
   </div>
 </div>
 
 
-<div id="modalpers2" class="w3-modal">
+<div id="modalDate2" class="w3-modal">
   <div class="w3-modal-content">
     <div class="w3-container">
-      <span onclick="document.getElementById('modalpers2').style.display='none'"
+      <span onclick="document.getElementById('modalDate2').style.display='none'"
       class="w3-button w3-display-topright">&times;</span>
-      <p>Personne 2</p>
-      <p>Some text in the Modal..</p>
+      <p>Date 1</p>
+      <p>Somme versée : 7777777 XAF</p>
+	  <ul class="w3-ul">
+		<li> Personne1 <span class="w3-text-green">OK</span></li>
+		<li> Personne2 <span class="w3-text-green">OK</span></li>
+		<li> Personne3 <span class="w3-text-green">OK</span></li>
+		<li> Personne4 <span class="w3-text-green">OK</span></li>
+		<li> Personne5 <span class="w3-text-green">OK</span></li>
+		<li> Personne6 <span class="w3-text-green">OK</span></li>
+		<li> Personne7 <span class="w3-text-green">OK</span></li>
+	  </ul>
     </div>
   </div>
 </div>
